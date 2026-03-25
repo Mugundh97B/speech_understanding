@@ -1,6 +1,6 @@
 import os
 from collections import Counter
-
+import matplotlib.pyplot as plt
 
 
 # Audit Dataset
@@ -46,3 +46,23 @@ if __name__ == "__main__":
             f.write(f"{speaker}: {count}\n")
 
     print("\nResults saved in q3/audit_results.txt")
+
+if __name__ == "__main__":
+    counts = audit_dataset()
+
+    speakers = list(counts.keys())
+    values = list(counts.values())
+
+    print("Total Speakers:", len(speakers))
+
+    # Plot
+    plt.figure(figsize=(10, 5))
+    plt.hist(values, bins=20)
+    plt.xlabel("Samples per Speaker")
+    plt.ylabel("Frequency")
+    plt.title("Speaker Distribution")
+
+    plt.savefig("q3/audit_plots.pdf")
+    plt.show()
+
+    print("Saved audit_plots.pdf")
