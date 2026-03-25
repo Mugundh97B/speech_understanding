@@ -1,0 +1,2 @@
+Baseline Accuracy: 0.2000
+Improved Accuracy: 0.4700

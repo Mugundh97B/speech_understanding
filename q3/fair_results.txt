@@ -1,0 +1,1 @@
+Fair Model Accuracy: 0.6700
